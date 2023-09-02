@@ -1,15 +1,15 @@
-function cb(i){
-   return i < 3;
+function cb(i) {
+  return i < 3;
 }
 
-function filter(a,cb){
-    let arr=[];
-    for(let i = 0; i < a.length; i++){
-        if(cb(a[i])){
-            arr.push(a[i]);
-        }
+function filter(a, cb) {
+  let arr = [];
+  for (let i = 0; i < a.length; i++) {
+    if (cb(a[i])) {
+      arr.push(a[i]);
     }
-    return arr;
+  }
+  return arr;
 }
 
-module.exports={filter,cb}
+module.exports = { filter, cb };
