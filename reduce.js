@@ -1,16 +1,18 @@
-function reduce(elements, cb, startingValue) {   
-    let op;
-    if (elements.length === 0 && startingValue === undefined) {
-        return "Error:Reduce of empty array with no initial values";
-    }
+// const elements = [1, 2, 3, 4, 5, 5];
 
-    if (startingValue === undefined) startingValue = elements[0];
-    op = startingValue;
-    for (let index = 0; index < elements.length; index++) {
-        op = cb(op, elements[index]);
-    }
-    
-    return op;
-};
+function cb(sum,element){
+    return sum+element
+}
 
-module.exports = reduce;
+function reduce(elements,cb,startingValue){    
+    let sum = 0;
+    if(startingValue == undefined){
+        startingValue =0;
+    }
+    for(let i=startingValue; i < elements.length; i++){        
+        sum = cb(sum,elements[i]);
+    }
+    return sum;
+}
+
+module.exports = {reduce,cb};
