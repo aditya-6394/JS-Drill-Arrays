@@ -1,12 +1,13 @@
-let a=[];
-function cb(i){
-    a.push(i);
+function cb(i) {
+  return i + 1;
 }
 
-function map(elements,cb){
-    for(let i=0; i<elements.length; i++){
-        cb(elements[i]);
-    }
-    return a;
+function map(elements, cb) {
+  let arr = [];
+  for (let item of elements) {
+    newVal = cb(item);
+    arr.push(newVal);
+  }
+  return arr;
 }
-module.exports={cb,map};
+module.exports = { cb, map };
