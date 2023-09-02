@@ -1,15 +1,13 @@
-let j = undefined
-function cb(i){
-    if(i===5){
-        j=i;
-    }
+function cb(i) {
+  return i == 6;
 }
 
-function find(elements,cb){    
-    for(let i of elements){
-        cb(i);
+function find(elements, cb) {
+  for (let i of elements) {
+    if (cb(i)) {
+      return i;
     }
-    return j;
+  }
 }
 
-module.exports={find,cb}
+module.exports = { find, cb };
